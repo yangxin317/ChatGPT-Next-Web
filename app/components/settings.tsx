@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, HTMLProps } from "react";
+import React from "react";
 
 import EmojiPicker, { Theme as EmojiTheme } from "emoji-picker-react";
 
@@ -37,7 +38,7 @@ import { InputRange } from "./input-range";
 function SettingItem(props: {
   title: string;
   subTitle?: string;
-  children: JSX.Element;
+  children: React.JSX.Element;
 }) {
   return (
     <ListItem>

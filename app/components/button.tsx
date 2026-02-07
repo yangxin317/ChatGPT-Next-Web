@@ -4,7 +4,7 @@ import styles from "./button.module.scss";
 
 export function IconButton(props: {
   onClick?: () => void;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   text?: string;
   bordered?: boolean;
   shadow?: boolean;

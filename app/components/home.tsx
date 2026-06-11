@@ -132,7 +132,7 @@ const useHasHydrated = () => {
   return hasHydrated;
 };
 
-function _Home() {
+function HomeContent() {
   const [createNewSession, currentIndex, removeSession] = useChatStore(
     (state) => [
       state.newSession,
@@ -254,7 +254,7 @@ function _Home() {
 export function Home() {
   return (
     <ErrorBoundary>
-      <_Home></_Home>
+      <HomeContent></HomeContent>
     </ErrorBoundary>
   );
 }

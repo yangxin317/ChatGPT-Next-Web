@@ -230,7 +230,7 @@ interface ChatStore {
 }
 
 function countMessages(msgs: Message[]) {
-  return msgs.reduce((pre, cur) => pre + cur.content.length, 0);
+  return msgs.reduce((pre, cur) => pre + (cur.content?.length ?? 0), 0);
 }
 
 const LOCAL_KEY = "chat-next-web-store";
@@ -567,7 +567,7 @@ export const useChatStore = create<ChatStore>()(
 
       updateStat(message) {
         get().updateCurrentSession((session) => {
-          session.stat.charCount += message.content.length;
+          session.stat.charCount += message.content?.length ?? 0;
           // TODO: should update chat count and word count
         });
       },

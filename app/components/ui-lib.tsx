@@ -5,8 +5,8 @@ import { createRoot } from "react-dom/client";
 import React from "react";
 
 export function Popover(props: {
-  children: JSX.Element;
-  content: JSX.Element;
+  children: React.JSX.Element;
+  content: React.JSX.Element;
   open?: boolean;
   onClose?: () => void;
 }) {
@@ -23,13 +23,16 @@ export function Popover(props: {
   );
 }
 
-export function Card(props: { children: JSX.Element[]; className?: string }) {
+export function Card(props: {
+  children: React.JSX.Element[];
+  className?: string;
+}) {
   return (
     <div className={styles.card + " " + props.className}>{props.children}</div>
   );
 }
 
-export function ListItem(props: { children: JSX.Element[] }) {
+export function ListItem(props: { children: React.JSX.Element[] }) {
   if (props.children.length > 2) {
     throw Error("Only Support Two Children");
   }
@@ -37,7 +40,9 @@ export function ListItem(props: { children: JSX.Element[] }) {
   return <div className={styles["list-item"]}>{props.children}</div>;
 }
 
-export function List(props: { children: JSX.Element[] | JSX.Element }) {
+export function List(props: {
+  children: React.JSX.Element[] | React.JSX.Element;
+}) {
   return <div className={styles.list}>{props.children}</div>;
 }
 
@@ -59,8 +64,8 @@ export function Loading() {
 
 interface ModalProps {
   title: string;
-  children?: JSX.Element;
-  actions?: JSX.Element[];
+  children?: React.JSX.Element;
+  actions?: React.JSX.Element[];
   onClose?: () => void;
 }
 export function Modal(props: ModalProps) {

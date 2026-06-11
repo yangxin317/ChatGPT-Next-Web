@@ -5,10 +5,11 @@ import RemarkBreaks from "remark-breaks";
 import RehypeKatex from "rehype-katex";
 import RemarkGfm from "remark-gfm";
 import RehypeHighlight from "rehype-highlight";
+import RehypeExternalLinks from "rehype-external-links";
 import { useRef, useState, RefObject, useEffect } from "react";
 import { copyToClipboard } from "../utils";
 
-export function PreCode(props: { children: any }) {
+export function PreCode(props: { children?: any }) {
   const ref = useRef<HTMLPreElement>(null);
 
   return (
@@ -63,11 +64,11 @@ export function Markdown(props: { content: string }) {
             ignoreMissing: true,
           },
         ],
+        [RehypeExternalLinks, { target: "_blank" }],
       ]}
       components={{
         pre: PreCode,
       }}
-      linkTarget={"_blank"}
     >
       {props.content}
     </ReactMarkdown>
